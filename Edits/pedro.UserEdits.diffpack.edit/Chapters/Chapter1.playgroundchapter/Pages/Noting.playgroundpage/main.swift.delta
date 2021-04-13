@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string></string>
+			<key>ModifiedRange</key>
+			<string>{470, 0}</string>
+			<key>OriginalContent</key>
+			<string>
+import SwiftUI
+import UIKit
+import PlaygroundSupport
+
+extension Color {
+    init(hex: UInt, alpha: Double = 1) {
+        self.init(
+            .sRGB,
+            red: Double((hex &gt;&gt; 16) &amp; 0xff) / 255,
+            green: Double((hex &gt;&gt; 08) &amp; 0xff) / 255,
+            blue: Double((hex &gt;&gt; 00) &amp; 0xff) / 255,
+            opacity: alpha
+        )
+    }
+}
+
+struct BackgroundView: View {
+    private var img: UIImage
+    private var image: Image
+    var hex: UInt
+    init(hex: UInt) {
+        self.img = UIImage(named: "lotusreal.png")!
+        self.image = Image(uiImage: img)
+        self.hex = hex
+    }
+    var body: some View {
+        ZStack {
+            Color(hex: hex)
+            image
+                .resizable()
+                .renderingMode(.template)
+                .foregroundColor(.white)
+                .frame(width: 200, height: 200)
+                .padding(.bottom, 700)
+        }
+    }
+}
+
+struct Thought: View {
+    @State var height: CGFloat = 50
+    var body: some View {
+        Circle()
+            .frame(height: height)
+            .foregroundColor(Color(hex: 0x3E54D3))
+    }
+}
+
+struct ThoughtsView: View {
+    var body: some View {
+        ZStack {
+            BackgroundView(hex: 0x3E54D3)
+            VStack {
+                Thought()
+            }
+        }
+        
+    }
+}
+
+struct ContentView: View {
+    var body: some View {
+        ThoughtsView()
+    }
+}
+</string>
+			<key>OriginalRange</key>
+			<string>{470, 1394}</string>
+		</dict>
+		<dict>
+			<key>ModifiedContent</key>
+			<string></string>
+			<key>ModifiedRange</key>
+			<string>{471, 0}</string>
+			<key>OriginalContent</key>
+			<string>PlaygroundPage.current.needsIndefiniteExecution = true
+PlaygroundPage.current.setLiveView(ContentView())
+</string>
+			<key>OriginalRange</key>
+			<string>{1865, 105}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Noting.playgroundpage/main.swift</string>
+</dict>
+</plist>
