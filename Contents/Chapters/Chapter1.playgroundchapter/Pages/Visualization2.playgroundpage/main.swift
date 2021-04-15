@@ -1,3 +1,4 @@
+
 /*:
  
  # Visualization
@@ -86,10 +87,14 @@ struct BackgroundView: View {
     private var img: UIImage
     private var image: Image
     var hex: UInt
+    private let player: Player
+    
     init(hex: UInt) {
         self.img = UIImage(named: "lotusreal.png")!
         self.image = Image(uiImage: img)
         self.hex = hex
+        self.player = Player("zen6")
+        self.player.play()
     }
     var body: some View {
         ZStack {
@@ -102,7 +107,7 @@ struct BackgroundView: View {
                     .foregroundColor(.white)
                     .frame(width: 200, height: 200)
                     .padding(.bottom, 700)
-                Text("Keep dragging inside the body to focus on it and make it larger")
+                Text("Keep dragging your touch inside the body to focus on it and make the beam larger")
                     .foregroundColor(.white)
                     .font(.system(size: 30, weight: .light))
                     .lineSpacing(10)

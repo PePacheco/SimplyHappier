@@ -22,6 +22,7 @@ struct BackgroundView: View {
     private var img: UIImage
     private var image: Image
     var hex: UInt
+    
     init(hex: UInt) {
         self.img = UIImage(named: "lotusreal.png")!
         self.image = Image(uiImage: img)
@@ -149,6 +150,12 @@ struct ThoughtsView: View {
 }
 
 struct ContentView: View {
+    private var player: Player
+    
+    init() {
+        self.player = Player("zen4")
+        self.player.play()
+    }
     var body: some View {
         ThoughtsView()
     }

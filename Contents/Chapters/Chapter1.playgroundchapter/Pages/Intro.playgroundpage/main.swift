@@ -2,8 +2,8 @@
 
 
 import SwiftUI
-import UIKit
 import PlaygroundSupport
+import AVFoundation
 
 extension Color {
     init(hex: UInt, alpha: Double = 1) {
@@ -20,12 +20,18 @@ extension Color {
 struct BackgroundView: View {
     private var img: UIImage
     private var image: Image
+    private var player: Player
     var hex: UInt
+    
     init(hex: UInt) {
         self.img = UIImage(named: "lotusreal.png")!
         self.image = Image(uiImage: img)
         self.hex = hex
+        self.player = Player("zen2")
+        self.player.play()
     }
+    
+    
     var body: some View {
         ZStack {
             Color(hex: hex)
@@ -48,6 +54,8 @@ struct ContentView: View {
         BackgroundView(hex: 0x3E54D3)
     }
 }
+
+let player = Player()
 
 PlaygroundPage.current.needsIndefiniteExecution = true
 PlaygroundPage.current.setLiveView(ContentView())

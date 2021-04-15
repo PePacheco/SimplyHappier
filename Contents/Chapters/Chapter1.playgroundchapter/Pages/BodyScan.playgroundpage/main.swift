@@ -94,11 +94,15 @@ struct AnimatedImage: View {
 struct BackgroundView: View {
     private var img: UIImage
     private var image: Image
+    private let player: Player
     var hex: UInt
+    
     init(hex: UInt) {
         self.img = UIImage(named: "lotusreal.png")!
         self.image = Image(uiImage: img)
         self.hex = hex
+        self.player = Player("zen3")
+        self.player.play()
     }
     var body: some View {
         ZStack {

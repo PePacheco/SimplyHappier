@@ -32,6 +32,10 @@
 				<key>File</key>
 				<string>Chapters/Chapter1.playgroundchapter/Pages/Visualization.playgroundpage/UserManifest.plist</string>
 			</dict>
+			<dict>
+				<key>File</key>
+				<string>Chapters/Chapter1.playgroundchapter/Pages/teste.playgroundpage/UserManifest.plist</string>
+			</dict>
 		</array>
 		<key>Modified</key>
 		<array>
@@ -43,15 +47,21 @@
 			</dict>
 			<dict>
 				<key>Diff</key>
-				<string>Chapters/Chapter1.playgroundchapter/Pages/Intro.playgroundpage/main.swift.delta</string>
-				<key>File</key>
-				<string>Chapters/Chapter1.playgroundchapter/Pages/Intro.playgroundpage/main.swift</string>
-			</dict>
-			<dict>
-				<key>Diff</key>
 				<string>Chapters/Chapter1.playgroundchapter/Pages/Visualization.playgroundpage/main.swift.delta</string>
 				<key>File</key>
 				<string>Chapters/Chapter1.playgroundchapter/Pages/Visualization.playgroundpage/main.swift</string>
+			</dict>
+			<dict>
+				<key>Diff</key>
+				<string>Chapters/Chapter1.playgroundchapter/Pages/teste.playgroundpage/main.swift.delta</string>
+				<key>File</key>
+				<string>Chapters/Chapter1.playgroundchapter/Pages/teste.playgroundpage/main.swift</string>
+			</dict>
+			<dict>
+				<key>Diff</key>
+				<string>Chapters/Chapter1.playgroundchapter/Pages/Intro.playgroundpage/main.swift.delta</string>
+				<key>File</key>
+				<string>Chapters/Chapter1.playgroundchapter/Pages/Intro.playgroundpage/main.swift</string>
 			</dict>
 		</array>
 		<key>Removed</key>
