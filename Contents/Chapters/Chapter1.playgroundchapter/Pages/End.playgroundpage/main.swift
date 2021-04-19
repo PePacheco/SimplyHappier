@@ -33,6 +33,7 @@ struct BackgroundView: View {
     var body: some View {
         ZStack {
             Color(hex: hex)
+                .edgesIgnoringSafeArea(.all)
             image
                 .resizable()
                 .renderingMode(.template)

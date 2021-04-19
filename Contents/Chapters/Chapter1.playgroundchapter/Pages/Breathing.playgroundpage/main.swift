@@ -32,6 +32,7 @@ struct BackgroundView: View {
     var body: some View {
         ZStack {
             Color(hex: hex)
+                .edgesIgnoringSafeArea(.all)
             VStack {
                 image
                     .resizable()
@@ -129,7 +130,7 @@ struct AnimatedShapeView: View {
                 .foregroundColor(.white)
                 .font(.system(size: 50, weight: .light))
                 .lineSpacing(10)
-                .offset(y: 400)
+                .offset(y: 340)
                 .animation(.linear)
         }
     }

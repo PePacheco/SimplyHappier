@@ -33,6 +33,7 @@ struct GradientButtonStyle: ButtonStyle {
 struct AnimatedImage: View {
     private var img: UIImage
     private var image: Image
+    @State private var text: String = "Press start to preview the technique"
     
     @State private var canStart: Bool = true
     @State private var offset: CGFloat = -250
@@ -61,12 +62,9 @@ struct AnimatedImage: View {
             }
             .padding(.top, 250)
             
-            Rectangle()
-                .foregroundColor(Color(hex: 0x3E54D3))
-                .frame(width: 100, height: 30)
-                .offset(y: -42)
             Button {
                 if canStart {
+                    self.text = "Scan your body like the picture above"
                     withAnimation(Animation.linear(duration: 20).repeatForever()) {
                         self.canStart = false
                         self.offset = offset + 480
@@ -79,14 +77,15 @@ struct AnimatedImage: View {
                     }
             }
             .buttonStyle(GradientButtonStyle())
-            .padding(.bottom, 60)
+            .padding(.bottom, 30)
             
-            Text("Press start to preview the technique")
+            Text(self.text)
                 .padding(.horizontal, 150)
                 .foregroundColor(.white)
                 .font(.system(size: 30, weight: .light))
                 .lineSpacing(10)
                 .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: true)
         }
     }
 }
@@ -107,6 +106,7 @@ struct BackgroundView: View {
     var body: some View {
         ZStack {
             Color(hex: hex)
+                .edgesIgnoringSafeArea(.all)
             image
                 .resizable()
                 .renderingMode(.template)

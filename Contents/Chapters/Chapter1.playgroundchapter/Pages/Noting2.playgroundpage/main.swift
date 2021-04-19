@@ -38,13 +38,14 @@ struct BackgroundView: View {
                     .renderingMode(.template)
                     .foregroundColor(.white)
                     .frame(width: 200, height: 200)
-                    .padding(.bottom, 700)
+                    .padding(.bottom, 600)
                 
-                Text("Tap on the thoughts to note them and give your mind some space")
+                Text("Tap on the thoughts untill they disapear to note them and give your mind some space")
                     .foregroundColor(.white)
                     .font(.system(size: 30, weight: .light))
                     .lineSpacing(10)
                     .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
                     .padding(.horizontal, 150)
             }
         }
@@ -123,7 +124,8 @@ struct ThoughtsView: View {
             BackgroundView(hex: 0x3E54D3)
             VStack {
                 ProgressBar(value: CGFloat(self.count))
-                    .frame(height: 20)
+                    .frame(height: 30)
+                    .padding(.top, 55)
                 Spacer()
                 ZStack {
                     ForEach(coord.indices, id: \.self) { i in

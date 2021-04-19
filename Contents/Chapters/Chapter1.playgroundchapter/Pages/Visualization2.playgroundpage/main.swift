@@ -73,11 +73,6 @@ struct AnimatedImage: View {
                     )
             }
             .padding(.top, 250)
-            
-            Rectangle()
-                .foregroundColor(Color(hex: 0x3E54D3))
-                .frame(width: 100, height: 50)
-                .offset(y: -62)
         }
         
     }
@@ -112,6 +107,7 @@ struct BackgroundView: View {
                     .font(.system(size: 30, weight: .light))
                     .lineSpacing(10)
                     .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
                     .padding(.horizontal, 150)
             }
         }
